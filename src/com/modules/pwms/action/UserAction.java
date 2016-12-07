@@ -13,7 +13,7 @@ import com.common.action.BaseAction;
 import com.common.util.kendoui.KPageParam;
 import com.common.util.page.PageResult;
 import com.google.gson.Gson;
-import com.modules.pwms.model.User;
+import com.modules.pwms.model.system.User;
 import com.modules.pwms.service.UserService;
 
 

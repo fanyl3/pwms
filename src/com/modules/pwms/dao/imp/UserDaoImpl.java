@@ -12,7 +12,7 @@ import com.common.util.kendoui.SortField;
 import com.common.util.page.PageResult;
 
 import com.modules.pwms.dao.UserDao;
-import com.modules.pwms.model.User;
+import com.modules.pwms.model.system.User;
 
 @Repository("userDaoImpl")
 public class UserDaoImpl extends BaseDaoSupport<User> implements UserDao{

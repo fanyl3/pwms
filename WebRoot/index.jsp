@@ -5,6 +5,7 @@
 <html>
   <head>
     <%@ include file="/common/config.inc"%> 
+    <%@ include file="/common/kendoui.inc"%>
     <title>Index</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">

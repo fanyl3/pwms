@@ -1,4 +1,4 @@
-package com.modules.sa2ee.model;
+package com.modules.pwms.model.system;
 
 
 import javax.persistence.Column;

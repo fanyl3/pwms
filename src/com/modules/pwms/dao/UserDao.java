@@ -3,7 +3,7 @@ package com.modules.pwms.dao;
 import com.common.dao.IBaseDao;
 import com.common.util.kendoui.KPageParam;
 import com.common.util.page.PageResult;
-import com.modules.pwms.model.User;
+import com.modules.pwms.model.system.User;
 
 
 public interface UserDao extends IBaseDao<User>{

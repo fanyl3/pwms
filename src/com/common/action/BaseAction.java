@@ -2,14 +2,24 @@ package com.common.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+import net.sf.json.util.PropertyFilter;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.struts2.ServletActionContext;
@@ -23,6 +33,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BaseAction extends ActionSupport implements ServletContextAware,
 						ServletResponseAware, ServletRequestAware, SessionAware{
+	private static final String RETURN_NAME = "success";
 	private static final long serialVersionUID = 1L;
 	public final transient Log log = LogFactory.getLog(super.getClass());
 	public static final String INFO = "info";

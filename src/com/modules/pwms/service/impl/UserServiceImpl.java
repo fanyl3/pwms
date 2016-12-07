@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.common.util.kendoui.KPageParam;
 import com.common.util.page.PageResult;
 import com.modules.pwms.dao.UserDao;
-import com.modules.pwms.model.User;
+import com.modules.pwms.model.system.User;
 import com.modules.pwms.service.UserService;
 
 
