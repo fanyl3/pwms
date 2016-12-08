@@ -100,7 +100,7 @@ public class User implements java.io.Serializable {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	@Column(name = "PSSWORD")
+	@Column(name = "PASSWORD")
 	public String getPassword() {
 		return password;
 	}

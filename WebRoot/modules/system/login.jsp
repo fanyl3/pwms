@@ -13,7 +13,6 @@
 <script type="text/javascript" src="<%=basePath%>ui/js/plugins/jquery.uniform.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>ui/js/custom/general.js"></script>
 <script type="text/javascript" src="<%=basePath%>ui/js/custom/index.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/login.js"></script>
 <!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
 <![endif]-->
@@ -34,14 +33,17 @@
 				<span class="slogan">后台管理系统</span>
             </div><!--logo-->
             
+             <div class="nousername">
+             	<div id="actionmsg" class="loginmsg" style="color:red"><s:property value="errmsg" /></div>
+				<div id="jsmsg" class="loginmsg" style="color:red"></div>
+            </div><!--nousername-->
             
-            <form id="login" action="<%=basePath%>jsp/login" onSubmit="return CheckForm(this);" method="post">
-            	
-            	<span id="errmsg" style="color:red"> <s:property value="errmsg" />
-            	
+            
+            <form id="login" action="<%=basePath%>login" method="post">
+            	            	
                 <div class="username">
                 	<div class="usernameinner">
-                    	<input type="text" name="userName" id="userName" />
+                    	<input type="text" name="username" id="username" />
                     </div>
                 </div>
                 

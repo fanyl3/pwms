@@ -2,23 +2,22 @@ jQuery(document).ready(function(){
 								
 	///// TRANSFORM CHECKBOX /////							
 	jQuery('input:checkbox').uniform();
-	
+	if(jQuery('#actionmsg').html() != ''){
+		jQuery('.nousername').fadeIn();
+		jQuery('#jsmsg').hide();
+	}
 	///// LOGIN FORM SUBMIT /////
 	jQuery('#login').submit(function(){
-	
-		if(jQuery('#username').val() == '' && jQuery('#password').val() == '') {
+		if(jQuery.trim(jQuery('#username').val()) == '' || jQuery.trim(jQuery('#password').val()) == '') {
 			jQuery('.nousername').fadeIn();
-			jQuery('.nopassword').hide();
-			return false;	
-		}
-		if(jQuery('#username').val() != '' && jQuery('#password').val() == '') {
-			jQuery('.nopassword').fadeIn().find('.userlogged h4, .userlogged a span').text(jQuery('#username').val());
-			jQuery('.nousername,.username').hide();
-			return false;;
+			jQuery('#jsmsg').html('用户名或密码不能为空！');
+			jQuery('#jsmsg').fadeIn();
+			jQuery('#actionmsg').hide();
+			return false;
 		}
 	});
 	
 	///// ADD PLACEHOLDER /////
-	jQuery('#username').attr('placeholder','Username');
-	jQuery('#password').attr('placeholder','Password');
+	jQuery('#username').attr('placeholder','用户名');
+	jQuery('#password').attr('placeholder','密码');
 });

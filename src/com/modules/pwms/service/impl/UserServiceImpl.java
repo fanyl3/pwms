@@ -1,5 +1,7 @@
 package com.modules.pwms.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import com.modules.pwms.service.UserService;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
+	public static final String USER_NAME = "userName";
 	
 	@Autowired
 	private UserDao userDao;
@@ -21,5 +24,12 @@ public class UserServiceImpl implements UserService {
 	
 	public void addUser(User user){
 		userDao.save(user);
+	}
+
+	@Override
+	public User findByUserName(String username) {
+		// TODO Auto-generated method stub
+		List<User> userList = userDao.findByProperty(USER_NAME, username);
+		return userList.size()==0?null:userList.get(0);
 	}
 }

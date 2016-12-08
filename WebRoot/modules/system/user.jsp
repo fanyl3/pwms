@@ -30,7 +30,7 @@
     <div class="topheader">
         <div class="left">
             <h1 class="logo">Ama.<span>Admin</span></h1>
-            <span class="slogan">åå°ç®¡çç³»ç»</span>
+            <span class="slogan">搜索</span>
             
             <div class="search">
             	<form action="" method="post">
@@ -83,15 +83,15 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">Tables</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
+            <h1 class="pagetitle">用户管理</h1>
+            <span class="pagedesc">账号管理页面</span>
             
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
                 
                 <div class="contenttitle2">
-                	<h3>Dynamic Table</h3>
+                	<h3>账户列表</h3>
                 </div><!--contenttitle-->
                 <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                     <colgroup>

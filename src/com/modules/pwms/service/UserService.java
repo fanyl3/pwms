@@ -6,4 +6,6 @@ import com.modules.pwms.model.User;
 
 public interface UserService {
 	public PageResult<User> getUserPage(KPageParam param);
+	
+	public User findByUserName(String username);
 }
