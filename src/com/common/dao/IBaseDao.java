@@ -43,6 +43,8 @@ public interface IBaseDao<T>
 	 * @return
 	 */
 	public int getCount();
+	
+	public List<T> findAll();
 
 	/**
 	 * 保存实体

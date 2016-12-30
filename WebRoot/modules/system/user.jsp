@@ -93,6 +93,9 @@
                 <div class="contenttitle2">
                 	<h3>账号管理列表</h3>
                 </div><!--contenttitle-->
+                <div class="tableoptions">
+                    <button class="radius3"  onclick="window.open('<%=basePath%>modules/system/addUser.jsp')">创建账号</button>
+                </div>
                 <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                     <colgroup>
                         <col class="con0" />
@@ -111,122 +114,22 @@
                             <th class="head1">电话</th>
                             <th class="head0">邮箱</th>
                             <th class="head1">性别</th>
-                            <th class="head0">权限</th>
                             <th class="head0">操作</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="gradeX">
-                            <td>1</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button>  <button>删除</button></td>
-                        </tr>
-                        <tr class="gradeX">
-                            <td>2</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
-                         <tr class="gradeX">
-                            <td>3</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
-                         <tr class="gradeX">
-                            <td>4</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
-                         <tr class="gradeX">
-                            <td>5</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
-                         <tr class="gradeX">
-                            <td>6</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
-                         <tr class="gradeX">
-                            <td>7</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
-                         <tr class="gradeX">
-                            <td>8</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
-                         <tr class="gradeX">
-                            <td>9</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
-                        <tr class="gradeX">
-                            <td>99</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
-                        <tr class="gradeX">
-                            <td>99</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td class="center">123456789</td>
-                            <td class="center">123456789@qq.com</td>
-                            <td class="center">男</td>
-                            <td class="center">普通员工</td>
-                            <td class="center"><button>修改</button> <button>删除</button></td>
-                        </tr>
- 
+                    	<c:forEach items="${users}" var="row" varStatus="vs">
+	                        <tr class="gradeX">
+	                            <td>${row.staffId}</td>
+	                            <td>${row.userName}</td>
+	                            <td>${row.name}</td>
+	                            <td class="center">${row.phone}</td>
+	                            <td class="center">${row.email}</td>
+	                            <td class="center">${row.sex}</td>
+	                            <td class="center")"><button  onclick="window.open('<%=basePath%>user/updatePage?id=${row.id}')">修改</button>  <button onclick="doDelete('${row.id}')">删除</button></td>
+	                        </tr>
+                        </c:forEach>
+
                     </tbody>
                 </table>
                 
@@ -240,6 +143,42 @@
     
     
 </div><!--bodywrapper-->
+<script>
+ 	function doDelete(id)
+        {
+ 		var location = (window.location+'').split('/'); 
+		 
+ 		var basePath= location[0]+'//'+location[2]+'/'+location[3]; 
+ 		jQuery.ajax({  
+        	    	type:'post',  
+        	    	url:basePath+'/user/deleteUser',
+        	    	data:{'id':id},  
+        	    	cache:false,  
+        	    	dataType:'json',  
+        	    	success:function(){
+        	    		alert('删除成功');
+        	    		window.location.reload();
+        	    	},  
+        	    	error:function(){alert('删除成功');window.location.reload();}  
+        	     }); 
+        }
+ 	function doUpdate(id)
+    {
+
+    	    $.ajax({  
+    	    	type:'post',  
+    	    	url:basePath+'user/updateUser.action',
+    	    	data:{'id':id}, 
+    	    	cache:false,  
+    	    	dataType:'json',  
+    	    	success:function(){
+    	    		alert('更新成功');
+    	    		window.close();
+    	    	},  
+    	    	error:function(){alert('更新成功');window.close();}  
+    	     }); 
+    }
+</script>
 
 </body>
 </html>

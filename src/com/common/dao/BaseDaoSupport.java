@@ -58,6 +58,12 @@ public abstract class BaseDaoSupport<T> extends HibernateDaoSupport implements I
 		return super.getHibernateTemplate().find(queryString, value);
 	}
 	
+	public List<T> findAll()
+	{
+		String queryString = "from " + entityClassName ;
+		return super.getHibernateTemplate().find(queryString);
+	}
+	
 	public List<T> findByPropertyAndCondition(String propertyName, Object value,String condition)
 	{
 		String queryString = "from " + entityClassName + " o where o." + propertyName + "= ? "+condition;

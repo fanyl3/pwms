@@ -1,4 +1,4 @@
-package com.modules.pwms.imp;
+package com.modules.pwms.dao.imp;
 
 import java.util.List;
 

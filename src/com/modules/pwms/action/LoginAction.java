@@ -2,6 +2,7 @@ package com.modules.pwms.action;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.common.action.BaseAction;
+import com.common.util.StringHelper;
 import com.modules.pwms.model.User;
 import com.modules.pwms.service.impl.UserServiceImpl;
 
@@ -60,7 +62,7 @@ public class LoginAction extends BaseAction{
 	public String execute() {
 		User user = service.findByUserName(username);
 		if(user != null){
-			password = password2Md5(password);
+			password = StringHelper.string2MD5(password);
 			if(password.equals("MD5FAIL")){
 				return "failure";
 			}
@@ -74,25 +76,4 @@ public class LoginAction extends BaseAction{
 		return "failure";
 	} 
 
-	public static String password2Md5(String plainText) {
-		try { 
-			plainText = plainText.trim();
-			MessageDigest md = MessageDigest.getInstance("MD5"); 
-			md.update(plainText.getBytes()); 
-			byte b[] = md.digest(); 
-			int i; 
-			StringBuffer buf = new StringBuffer(""); 
-			for (int offset = 0; offset < b.length; offset++) { 
-				i = b[offset]; 
-				if(i<0) 
-					i+= 256; 
-				if(i<16) buf.append("0"); 
-				buf.append(Integer.toHexString(i));
-			} 
-			return buf.toString().substring(8,24).toLowerCase(); 
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace(); 
-			return "MD5FAIL";
-		} 
-	} 
 }

@@ -32,4 +32,19 @@ public class UserServiceImpl implements UserService {
 		List<User> userList = userDao.findByProperty(USER_NAME, username);
 		return userList.size()==0?null:userList.get(0);
 	}
+	
+	public List<User> getAllUser(){
+		return userDao.findAll();
+	}
+	public void deleteUser(String id){
+		userDao.delete(id);
+	}
+	public void updateUser(User user){
+		userDao.update(user);
+	}
+	
+	public User getUserById(String id){
+		return userDao.find(id);
+	}
+	
 }
